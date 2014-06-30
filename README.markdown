@@ -5,7 +5,7 @@ FPCustomHandler is a category for Crashlytics to allow you run custom `NSUncaugh
 ## Example
 
 
-```
+```objc
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -17,7 +17,7 @@ FPCustomHandler is a category for Crashlytics to allow you run custom `NSUncaugh
 }
 ```
 
-```
+```objc
 
 static void CustomNSExceptionCrashHandler(NSException *exception)
 {
