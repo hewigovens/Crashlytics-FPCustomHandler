@@ -4,7 +4,7 @@ FPCustomHandler is a category for [Crashlytics](www.crashlytics.com) to allow yo
 
 ## Warning
 
-FPCustomHandler relies on the underlying implementation details of Crashlytics(version 2.2.1(35)), These may changed in future Crashlytics releases. At your own risk to use it.
+FPCustomHandler relies on the underlying implementation details of Crashlytics(version 2.2.1(35)), These may be changed in future Crashlytics releases. At your own risk to use it.
 
 When you implement your custom handlers, please do take [Async-Safe Functions](https://www.plcrashreporter.org/documentation/api/v1.2/async_safety.html) into considerations.
 
