@@ -34,6 +34,8 @@ static void CustomNSExceptionCrashHandler(NSException *exception)
 
 ```
 
+### Trigger a crash
+
 ```objc
 
 	//SIGABRT
