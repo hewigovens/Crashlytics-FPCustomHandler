@@ -4,7 +4,7 @@ FPCustomHandler is a category for [Crashlytics](www.crashlytics.com) to allow yo
 
 ## Warning
 
-FPCustomHandler relies on the underlying implementation details of Crashlytics(version 2.2.1(35)), These may changed in future Crashlytics releases. Use as your own risk.
+FPCustomHandler relies on the underlying implementation details of Crashlytics(version 2.2.1(35)), These may changed in future Crashlytics releases. At your own risk to use it.
 
 When you implement your custom handlers, please do take [Async-Safe Functions](https://www.plcrashreporter.org/documentation/api/v1.2/async_safety.html) into considerations.
 
@@ -19,7 +19,7 @@ When you implement your custom handlers, please do take [Async-Safe Functions](h
 	
 	//These category methods should be called after start Crashlytics
     [[Crashlytics sharedInstance] setupCustomExceptionHandler:&CustomNSExceptionCrashHandler];
-    [[Crashlytics sharedInstance] setupCustomSignalHandler:NULL];
+    [[Crashlytics sharedInstance] setupCustomSignalHandler:&CustomSignalCrashHandler];
     
     return YES;
 }
@@ -30,6 +30,11 @@ When you implement your custom handlers, please do take [Async-Safe Functions](h
 static void CustomNSExceptionCrashHandler(NSException *exception)
 {
     NSLog(@"==========> CustomNSExceptionCrashHandler called\n");
+}
+
+static void CustomSignalCrashHandler(int signo, siginfo_t *info, void *context)
+{
+    NSLog(@"==========> CustomSignalCrashHandler called\n");
 }
 
 ```
