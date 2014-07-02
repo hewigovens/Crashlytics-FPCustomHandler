@@ -1,6 +1,6 @@
 ## Crashlytics+FPCustomHandler
 
-FPCustomHandler is a category for [Crashlytics](www.crashlytics.com) to allow you run custom `NSUncaughtExceptionHandler` or `signal` handler when crash happened.
+FPCustomHandler is a category for [Crashlytics](http://www.crashlytics.com) to allow you run custom `NSUncaughtExceptionHandler` or `signal` handler when crash happened.
 
 ## Warning
 
