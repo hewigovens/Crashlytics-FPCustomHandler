@@ -3,7 +3,7 @@
 //  CustomCrashHandler
 //
 //  Created by hewig on 6/30/14.
-//  Copyright (c) 2014 4plex. All rights reserved.
+//  Copyright (c) 2014 fourplex. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -31,17 +31,13 @@ static void CustomSignalCrashHandler(int signo, siginfo_t *info, void *context)
     [Crashlytics startWithAPIKey:@"" delegate:self];
     [[Crashlytics sharedInstance] setupCustomExceptionHandler:&CustomNSExceptionCrashHandler];
     [[Crashlytics sharedInstance] setupCustomSignalHandler:&CustomSignalCrashHandler];
-    
-    if ([[Crashlytics sharedInstance] isLastSessionCrashed]) {
-        NSLog(@"==> last session crashed");
-    }
-    
+
     return YES;
 }
 
-- (void)crashlytics:(Crashlytics *)crashlytics didDetectCrashDuringPreviousExecution:(id <CLSCrashReport>)crash
+- (void)crashlyticsDidDetectReportForLastExecution:(CLSReport *)report
 {
-    NSLog(@"==> App crashed at :%@", crash.crashedOnDate);
+    NSLog(@"==> App crashed at :%@", report.crashedOnDate);
 }
 
 @end

@@ -7,18 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D5FD66F1CD1B5C7CA1CDB75 /* libPods-CustomCrashHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48313390F5FCBBB9B3D05679 /* libPods-CustomCrashHandler.a */; };
+		76398D965DBF12BAAD303FFF /* libPods-CustomCrashHandlerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EFF0DC9E5F41431D7CC3DF /* libPods-CustomCrashHandlerTests.a */; };
 		BB53377F19617AD600468485 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB53377D19617AD600468485 /* InfoPlist.strings */; };
 		BB53378119617AD600468485 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53378019617AD600468485 /* main.m */; };
 		BB53378519617AD600468485 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53378419617AD600468485 /* AppDelegate.m */; };
 		BB53378E19617AD600468485 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB53378D19617AD600468485 /* ViewController.m */; };
 		BB53379019617AD600468485 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB53378F19617AD600468485 /* Images.xcassets */; };
+		BB5E6DED1E73AB8C00F42E88 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB5E6DEC1E73AB8C00F42E88 /* Launch Screen.storyboard */; };
+		BB5E6E031E73C55F00F42E88 /* CustomCrashHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5E6E021E73C55F00F42E88 /* CustomCrashHandlerTests.m */; };
 		BBCF6C35196186AB00A3E4AC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCF6C34196186AB00A3E4AC /* Crashlytics.framework */; };
-		BBD472A619964751001CCA9B /* Crashlytics+FPCustomHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD472A519964751001CCA9B /* Crashlytics+FPCustomHandler.m */; };
 		BBD472A7199648F7001CCA9B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB53378619617AD600468485 /* Main_iPhone.storyboard */; };
 		BBD472A8199648F7001CCA9B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB53378919617AD600468485 /* Main_iPad.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BB5E6E051E73C55F00F42E88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB53376919617AD600468485 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB53377019617AD600468485;
+			remoteInfo = CustomCrashHandler;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		14EFF0DC9E5F41431D7CC3DF /* libPods-CustomCrashHandlerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CustomCrashHandlerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48313390F5FCBBB9B3D05679 /* libPods-CustomCrashHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CustomCrashHandler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00530A50B6C1A1AE238FCC7 /* Pods-CustomCrashHandler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomCrashHandler.release.xcconfig"; path = "Pods/Target Support Files/Pods-CustomCrashHandler/Pods-CustomCrashHandler.release.xcconfig"; sourceTree = "<group>"; };
+		BA8A2039B2414FFD2CCA91F1 /* Pods-CustomCrashHandler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomCrashHandler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CustomCrashHandler/Pods-CustomCrashHandler.debug.xcconfig"; sourceTree = "<group>"; };
 		BB53377119617AD600468485 /* CustomCrashHandler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCrashHandler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB53377419617AD600468485 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB53377619617AD600468485 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -35,9 +52,13 @@
 		BB53378D19617AD600468485 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BB53378F19617AD600468485 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BB53379619617AD600468485 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BB5E6DEC1E73AB8C00F42E88 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		BB5E6E001E73C55F00F42E88 /* CustomCrashHandlerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomCrashHandlerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB5E6E021E73C55F00F42E88 /* CustomCrashHandlerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCrashHandlerTests.m; sourceTree = "<group>"; };
+		BB5E6E041E73C55F00F42E88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBCF6C34196186AB00A3E4AC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		BBD472A419964751001CCA9B /* Crashlytics+FPCustomHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Crashlytics+FPCustomHandler.h"; path = "../src/Crashlytics+FPCustomHandler.h"; sourceTree = "<group>"; };
-		BBD472A519964751001CCA9B /* Crashlytics+FPCustomHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Crashlytics+FPCustomHandler.m"; path = "../src/Crashlytics+FPCustomHandler.m"; sourceTree = "<group>"; };
+		C06489C77458FD43C2E8F1F4 /* Pods-CustomCrashHandlerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomCrashHandlerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CustomCrashHandlerTests/Pods-CustomCrashHandlerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E8535FBEBFB8830EBDBB50B9 /* Pods-CustomCrashHandlerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomCrashHandlerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CustomCrashHandlerTests/Pods-CustomCrashHandlerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,19 +67,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBCF6C35196186AB00A3E4AC /* Crashlytics.framework in Frameworks */,
+				6D5FD66F1CD1B5C7CA1CDB75 /* libPods-CustomCrashHandler.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB5E6DFD1E73C55F00F42E88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76398D965DBF12BAAD303FFF /* libPods-CustomCrashHandlerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45231946FC2C1061BF20360F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA8A2039B2414FFD2CCA91F1 /* Pods-CustomCrashHandler.debug.xcconfig */,
+				B00530A50B6C1A1AE238FCC7 /* Pods-CustomCrashHandler.release.xcconfig */,
+				C06489C77458FD43C2E8F1F4 /* Pods-CustomCrashHandlerTests.debug.xcconfig */,
+				E8535FBEBFB8830EBDBB50B9 /* Pods-CustomCrashHandlerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BB53376819617AD600468485 = {
 			isa = PBXGroup;
 			children = (
-				BBD472A319964733001CCA9B /* Crashlytics-FPCustomHandler */,
 				BB53377A19617AD600468485 /* CustomCrashHandler */,
+				BB5E6E011E73C55F00F42E88 /* CustomCrashHandlerTests */,
 				BB53377319617AD600468485 /* Frameworks */,
 				BB53377219617AD600468485 /* Products */,
+				45231946FC2C1061BF20360F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				BB53377119617AD600468485 /* CustomCrashHandler.app */,
+				BB5E6E001E73C55F00F42E88 /* CustomCrashHandlerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +121,8 @@
 				BB53377619617AD600468485 /* CoreGraphics.framework */,
 				BB53377819617AD600468485 /* UIKit.framework */,
 				BB53379619617AD600468485 /* XCTest.framework */,
+				48313390F5FCBBB9B3D05679 /* libPods-CustomCrashHandler.a */,
+				14EFF0DC9E5F41431D7CC3DF /* libPods-CustomCrashHandlerTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -93,6 +138,7 @@
 				BB53378D19617AD600468485 /* ViewController.m */,
 				BB53378F19617AD600468485 /* Images.xcassets */,
 				BB53377B19617AD600468485 /* Supporting Files */,
+				BB5E6DEC1E73AB8C00F42E88 /* Launch Screen.storyboard */,
 			);
 			path = CustomCrashHandler;
 			sourceTree = "<group>";
@@ -108,13 +154,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BBD472A319964733001CCA9B /* Crashlytics-FPCustomHandler */ = {
+		BB5E6E011E73C55F00F42E88 /* CustomCrashHandlerTests */ = {
 			isa = PBXGroup;
 			children = (
-				BBD472A419964751001CCA9B /* Crashlytics+FPCustomHandler.h */,
-				BBD472A519964751001CCA9B /* Crashlytics+FPCustomHandler.m */,
+				BB5E6E021E73C55F00F42E88 /* CustomCrashHandlerTests.m */,
+				BB5E6E041E73C55F00F42E88 /* Info.plist */,
 			);
-			name = "Crashlytics-FPCustomHandler";
+			path = CustomCrashHandlerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,10 +170,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB5337A619617AD600468485 /* Build configuration list for PBXNativeTarget "CustomCrashHandler" */;
 			buildPhases = (
+				90F87C1393E6B1B3A6EF0714 /* [CP] Check Pods Manifest.lock */,
 				BB53376D19617AD600468485 /* Sources */,
 				BB53376F19617AD600468485 /* Resources */,
-				BB5337AC19617BAF00468485 /* ShellScript */,
+				BB5337AC19617BAF00468485 /* Run Crashlytics */,
 				BB5337AF1961866500468485 /* Frameworks */,
+				D18633F7D4A80C0BE85AAD60 /* [CP] Embed Pods Frameworks */,
+				2F59CB91015D23B9483C25AF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,14 +187,44 @@
 			productReference = BB53377119617AD600468485 /* CustomCrashHandler.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BB5E6DFF1E73C55F00F42E88 /* CustomCrashHandlerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB5E6E071E73C55F00F42E88 /* Build configuration list for PBXNativeTarget "CustomCrashHandlerTests" */;
+			buildPhases = (
+				40816B6465976D220C026E67 /* [CP] Check Pods Manifest.lock */,
+				BB5E6DFC1E73C55F00F42E88 /* Sources */,
+				BB5E6DFD1E73C55F00F42E88 /* Frameworks */,
+				BB5E6DFE1E73C55F00F42E88 /* Resources */,
+				E33FCB14245770BBBBDC886B /* [CP] Embed Pods Frameworks */,
+				FFEB18B0719E87E99F5A6BEB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB5E6E061E73C55F00F42E88 /* PBXTargetDependency */,
+			);
+			name = CustomCrashHandlerTests;
+			productName = CustomCrashHandlerTests;
+			productReference = BB5E6E001E73C55F00F42E88 /* CustomCrashHandlerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BB53376919617AD600468485 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = 4plex;
+				TargetAttributes = {
+					BB5E6DFF1E73C55F00F42E88 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = FH9QG7ZJR9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BB53377019617AD600468485;
+					};
+				};
 			};
 			buildConfigurationList = BB53376C19617AD600468485 /* Build configuration list for PBXProject "CustomCrashHandler" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -161,6 +240,7 @@
 			projectRoot = "";
 			targets = (
 				BB53377019617AD600468485 /* CustomCrashHandler */,
+				BB5E6DFF1E73C55F00F42E88 /* CustomCrashHandlerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -173,25 +253,124 @@
 				BBD472A7199648F7001CCA9B /* Main_iPhone.storyboard in Resources */,
 				BBD472A8199648F7001CCA9B /* Main_iPad.storyboard in Resources */,
 				BB53379019617AD600468485 /* Images.xcassets in Resources */,
+				BB5E6DED1E73AB8C00F42E88 /* Launch Screen.storyboard in Resources */,
 				BB53377F19617AD600468485 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB5E6DFE1E73C55F00F42E88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BB5337AC19617BAF00468485 /* ShellScript */ = {
+		2F59CB91015D23B9483C25AF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = ./Crashlytics.framework/run;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CustomCrashHandler/Pods-CustomCrashHandler-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40816B6465976D220C026E67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		90F87C1393E6B1B3A6EF0714 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BB5337AC19617BAF00468485 /* Run Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Crashlytics";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$CONFIGURATION\" == Release* ]];then\n    \"${PODS_ROOT}/Fabric/run\"\nfi";
+		};
+		D18633F7D4A80C0BE85AAD60 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CustomCrashHandler/Pods-CustomCrashHandler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E33FCB14245770BBBBDC886B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CustomCrashHandlerTests/Pods-CustomCrashHandlerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFEB18B0719E87E99F5A6BEB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CustomCrashHandlerTests/Pods-CustomCrashHandlerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -203,11 +382,26 @@
 				BB53378E19617AD600468485 /* ViewController.m in Sources */,
 				BB53378519617AD600468485 /* AppDelegate.m in Sources */,
 				BB53378119617AD600468485 /* main.m in Sources */,
-				BBD472A619964751001CCA9B /* Crashlytics+FPCustomHandler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB5E6DFC1E73C55F00F42E88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB5E6E031E73C55F00F42E88 /* CustomCrashHandlerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB5E6E061E73C55F00F42E88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB53377019617AD600468485 /* CustomCrashHandler */;
+			targetProxy = BB5E6E051E73C55F00F42E88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BB53377D19617AD600468485 /* InfoPlist.strings */ = {
@@ -250,13 +444,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -269,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -289,20 +489,25 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -311,9 +516,9 @@
 		};
 		BB5337A719617AD600468485 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA8A2039B2414FFD2CCA91F1 /* Pods-CustomCrashHandler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -321,6 +526,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CustomCrashHandler/CustomCrashHandler-Prefix.pch";
 				INFOPLIST_FILE = "CustomCrashHandler/CustomCrashHandler-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "in.fourplex.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -328,9 +534,9 @@
 		};
 		BB5337A819617AD600468485 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B00530A50B6C1A1AE238FCC7 /* Pods-CustomCrashHandler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -338,8 +544,48 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CustomCrashHandler/CustomCrashHandler-Prefix.pch";
 				INFOPLIST_FILE = "CustomCrashHandler/CustomCrashHandler-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "in.fourplex.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BB5E6E081E73C55F00F42E88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C06489C77458FD43C2E8F1F4 /* Pods-CustomCrashHandlerTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = FH9QG7ZJR9;
+				INFOPLIST_FILE = CustomCrashHandlerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = in.fourplex.CustomCrashHandlerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomCrashHandler.app/CustomCrashHandler";
+			};
+			name = Debug;
+		};
+		BB5E6E091E73C55F00F42E88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8535FBEBFB8830EBDBB50B9 /* Pods-CustomCrashHandlerTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = FH9QG7ZJR9;
+				INFOPLIST_FILE = CustomCrashHandlerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = in.fourplex.CustomCrashHandlerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomCrashHandler.app/CustomCrashHandler";
 			};
 			name = Release;
 		};
@@ -360,6 +606,15 @@
 			buildConfigurations = (
 				BB5337A719617AD600468485 /* Debug */,
 				BB5337A819617AD600468485 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB5E6E071E73C55F00F42E88 /* Build configuration list for PBXNativeTarget "CustomCrashHandlerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB5E6E081E73C55F00F42E88 /* Debug */,
+				BB5E6E091E73C55F00F42E88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

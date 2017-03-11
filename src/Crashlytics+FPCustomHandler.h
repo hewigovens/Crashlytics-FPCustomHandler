@@ -3,7 +3,7 @@
 //  CustomCrashHandler
 //
 //  Created by hewig on 6/30/14.
-//  Copyright (c) 2014 4plex. All rights reserved.
+//  Copyright (c) 2014 fourplex. All rights reserved.
 //
 
 #import <Crashlytics/Crashlytics.h>
@@ -11,13 +11,6 @@
 typedef void (*FPCustomSignalHandler)(int signo, siginfo_t *info, void *context);
 
 @interface Crashlytics (FPCustomHandler)
-
-/**
- *  Check if last session was crashed
- *
- *  @return NO if not crashed
- */
--(BOOL)isLastSessionCrashed;
 
 /**
  *  Allow you to run custome exception handler before Crashlytics' handler

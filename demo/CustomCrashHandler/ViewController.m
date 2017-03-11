@@ -3,7 +3,7 @@
 //  CustomCrashHandler
 //
 //  Created by hewig on 6/30/14.
-//  Copyright (c) 2014 4plex. All rights reserved.
+//  Copyright (c) 2014 fourplex. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -18,19 +18,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (IBAction)crashButtonTouched:(id)sender
 {
-    //NSString* a = nil;
-    //NSArray* array = @[a];
-    //[[Crashlytics sharedInstance] crash];
+//    NSString* a = nil;
+//    NSArray* array = @[a];
+//    [[Crashlytics sharedInstance] crash];
     abort();
 }
 

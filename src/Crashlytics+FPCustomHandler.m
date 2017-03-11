@@ -3,11 +3,12 @@
 //  CustomCrashHandler
 //
 //  Created by hewig on 6/30/14.
-//  Copyright (c) 2014 4plex. All rights reserved.
+//  Copyright (c) 2014 fourplex. All rights reserved.
 //
 
 #import "Crashlytics+FPCustomHandler.h"
 #import <sys/signal.h>
+#import <Crashlytics/CLSReport.h>
 
 #pragma mark - NSUncaughtExceptionHandler
 
@@ -61,12 +62,6 @@ static void fp_signal_handler(int signo, siginfo_t *info, void *context)
 
 @implementation Crashlytics (FPCustomHandler)
 
--(BOOL)isLastSessionCrashed
-{
-    NSNumber* isCrashed = [self valueForKey:@"_lastSessionWasCrash"];
-    return [isCrashed boolValue];
-}
-
 -(void)setupCustomExceptionHandler:(NSUncaughtExceptionHandler *)exceptionHandler
 {
     crashlyticsExceptionHandler = NSGetUncaughtExceptionHandler();
@@ -105,11 +100,20 @@ static void fp_signal_handler(int signo, siginfo_t *info, void *context)
     struct sigaction old_sa;
     
     int count = sizeof(fp_signals)/sizeof(int);
+    void *handler = NULL;
     for (int i = 0 ; i < count; i++) {
         sigaction(fp_signals[i], NULL, &old_sa);
-        CLS_LOG("==> signal :%d sigaction flags is : %d ", fp_signals[i], old_sa.sa_flags);
         if (old_sa.sa_flags & SA_SIGINFO) {
-            CLS_LOG("==> and sigaction handler is :%p", old_sa.sa_sigaction);
+            if (handler == NULL) {
+                handler = old_sa.sa_sigaction;
+            } else {
+                if (handler != old_sa.sa_sigaction) {
+                    /* different signal handler detected abort...*/
+                    CLS_LOG("==> different signal handler detected. This category may not work any more");
+                    abort();
+                }
+            }
+            CLS_LOG("==> signal :%d sigaction flags is : %d, sigaction handler is :%p", fp_signals[i], old_sa.sa_flags, old_sa.sa_sigaction);
         }
     }
 }

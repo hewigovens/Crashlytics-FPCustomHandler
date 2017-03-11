@@ -1,0 +1,8 @@
+
+target 'CustomCrashHandler' do
+    pod 'Crashlytics-FPCustomHandler', :path => '../'
+end
+
+target 'CustomCrashHandlerTests' do
+    pod 'Crashlytics-FPCustomHandler', :path => '../'
+end
