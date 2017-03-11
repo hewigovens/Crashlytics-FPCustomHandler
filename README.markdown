@@ -1,12 +1,25 @@
-## Crashlytics+FPCustomHandler
+## Crashlytics-FPCustomHandler
 
-FPCustomHandler is a category for [Crashlytics](http://www.crashlytics.com) to allow you run custom `NSUncaughtExceptionHandler` or `signal` handler when crash happened.
+![](https://img.shields.io/cocoapods/v/Crashlytics-FPCustomHandler.svg)
+![](https://img.shields.io/cocoapods/p/Crashlytics-FPCustomHandler.svg)
+![](https://img.shields.io/cocoapods/l/Crashlytics-FPCustomHandler.svg)
+
+FPCustomHandler is a category for [Crashlytics](https://fabric.io/kits/ios/crashlytics) to allow you run custom `NSUncaughtExceptionHandler` or `signal` handler when crash happened.
 
 ## Warning
 
-FPCustomHandler relies on the underlying implementation details of Crashlytics(version 2.2.2(36)), These may be changed in future Crashlytics releases. At your own risk to use it.
+FPCustomHandler relies on the underlying implementation details of Crashlytics(version 3.8.4(121)), These may be changed in future Crashlytics releases. At your own risk to use it.
 
 When you implement your custom handlers, please do take [Async-Safe Functions](https://www.plcrashreporter.org/documentation/api/v1.2/async_safety.html) into considerations.
+
+## Integration
+
+
+Add pod 'Crashlytics-FPCustomHandler' to your Podfile
+
+```ruby
+    pod 'Crashlytics-FPCustomHandler', :git => 'https://github.com/hewigovens/Crashlytics-FPCustomHandler.git'
+```
 
 ## Example
 
