@@ -1,10 +1,10 @@
-## Crashlytics-FPCustomHandler
+## FPCrashHandler
 
-![](https://img.shields.io/cocoapods/v/Crashlytics-FPCustomHandler.svg)
-![](https://img.shields.io/cocoapods/p/Crashlytics-FPCustomHandler.svg)
-![](https://img.shields.io/cocoapods/l/Crashlytics-FPCustomHandler.svg)
+![](https://img.shields.io/cocoapods/v/FPCrashHandler.svg)
+![](https://img.shields.io/cocoapods/p/FPCrashHandler.svg)
+![](https://img.shields.io/cocoapods/l/FPCrashHandler.svg)
 
-FPCustomHandler is a category for [Crashlytics](https://fabric.io/kits/ios/crashlytics) to allow you run custom `NSUncaughtExceptionHandler` or `signal` handler when crash happened.
+FPCustomHandler is a helper class for [Crashlytics](https://fabric.io/kits/ios/crashlytics) to allow you run custom `NSUncaughtExceptionHandler` or `signal` handler when crash happened.
 
 ## Warning
 
@@ -14,26 +14,38 @@ When you implement your custom handlers, please do take [Async-Safe Functions](h
 
 ## Integration
 
-
 Add pod 'Crashlytics-FPCustomHandler' to your Podfile
 
 ```ruby
-    pod 'Crashlytics-FPCustomHandler', :git => 'https://github.com/hewigovens/Crashlytics-FPCustomHandler.git'
+    pod 'FPCrashHandler'
 ```
 
-## Example
+## Example Swift
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    //These methods should be called after start Crashlytics
+    FPCrashHandler.setupCustomExceptionHandler { exception in
+        NSLog("==> CustomNSExceptionCrashHandler called\n")
+    }
+
+    FPCrashHandler.setupCustomSignal { (status, info, context) in
+        NSLog("==> CustomSignalCrashHandler called\n");
+    }
+}
+```
+
+## Example ObjC
 
 
 ```objc
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	[Crashlytics startWithAPIKey:@"YOUR_API_KEY" delegate:self];
 	
-	//These category methods should be called after start Crashlytics
-    [[Crashlytics sharedInstance] setupCustomExceptionHandler:&CustomNSExceptionCrashHandler];
-    [[Crashlytics sharedInstance] setupCustomSignalHandler:&CustomSignalCrashHandler];
-    
+	//These methods should be called after start Crashlytics
+    [FPCrashHandler setupCustomExceptionHandler:&CustomNSExceptionCrashHandler];
+    [FPCrashHandler setupCustomSignalHandler:&CustomSignalCrashHandler];
     return YES;
 }
 ```
@@ -42,17 +54,17 @@ Add pod 'Crashlytics-FPCustomHandler' to your Podfile
 
 static void CustomNSExceptionCrashHandler(NSException *exception)
 {
-    NSLog(@"==========> CustomNSExceptionCrashHandler called\n");
+    NSLog(@"==> CustomNSExceptionCrashHandler called\n");
 }
 
 static void CustomSignalCrashHandler(int signo, siginfo_t *info, void *context)
 {
-    NSLog(@"==========> CustomSignalCrashHandler called\n");
+    NSLog(@"==> CustomSignalCrashHandler called\n");
 }
 
 ```
 
-### Trigger a crash
+## Trigger a crash
 
 ```objc
 
@@ -63,6 +75,12 @@ static void CustomSignalCrashHandler(int signo, siginfo_t *info, void *context)
 	NSString* str = nil;
 	NSArray* array = @[str];
 ```
+
+Or just present the `debugOptionsAlert` on `FPCrashHandler`.
+
+You should run the demo app without Xcode's debbuger attached, then you can search the logs with "==>" here: 
+
+`iOS Simulator -> Debug -> Open System Log (or press Cmd + / in iOS Simulator)`
 
 ## Reference
 

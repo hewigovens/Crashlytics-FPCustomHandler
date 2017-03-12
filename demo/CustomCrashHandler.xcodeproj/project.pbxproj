@@ -17,8 +17,6 @@
 		BB5E6DED1E73AB8C00F42E88 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB5E6DEC1E73AB8C00F42E88 /* Launch Screen.storyboard */; };
 		BB5E6E031E73C55F00F42E88 /* CustomCrashHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5E6E021E73C55F00F42E88 /* CustomCrashHandlerTests.m */; };
 		BBCF6C35196186AB00A3E4AC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCF6C34196186AB00A3E4AC /* Crashlytics.framework */; };
-		BBD472A7199648F7001CCA9B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB53378619617AD600468485 /* Main_iPhone.storyboard */; };
-		BBD472A8199648F7001CCA9B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB53378919617AD600468485 /* Main_iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +44,6 @@
 		BB53378219617AD600468485 /* CustomCrashHandler-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CustomCrashHandler-Prefix.pch"; sourceTree = "<group>"; };
 		BB53378319617AD600468485 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB53378419617AD600468485 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BB53378719617AD600468485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		BB53378A19617AD600468485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		BB53378C19617AD600468485 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BB53378D19617AD600468485 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BB53378F19617AD600468485 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -132,8 +128,6 @@
 			children = (
 				BB53378319617AD600468485 /* AppDelegate.h */,
 				BB53378419617AD600468485 /* AppDelegate.m */,
-				BB53378619617AD600468485 /* Main_iPhone.storyboard */,
-				BB53378919617AD600468485 /* Main_iPad.storyboard */,
 				BB53378C19617AD600468485 /* ViewController.h */,
 				BB53378D19617AD600468485 /* ViewController.m */,
 				BB53378F19617AD600468485 /* Images.xcassets */,
@@ -250,8 +244,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBD472A7199648F7001CCA9B /* Main_iPhone.storyboard in Resources */,
-				BBD472A8199648F7001CCA9B /* Main_iPad.storyboard in Resources */,
 				BB53379019617AD600468485 /* Images.xcassets in Resources */,
 				BB5E6DED1E73AB8C00F42E88 /* Launch Screen.storyboard in Resources */,
 				BB53377F19617AD600468485 /* InfoPlist.strings in Resources */,
@@ -410,22 +402,6 @@
 				BB53377E19617AD600468485 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		BB53378619617AD600468485 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BB53378719617AD600468485 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		BB53378919617AD600468485 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BB53378A19617AD600468485 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

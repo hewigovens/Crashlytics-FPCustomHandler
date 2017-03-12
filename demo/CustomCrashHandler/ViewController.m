@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <Crashlytics/Crashlytics.h>
+#import "FPCrashHandler.h"
 
 @interface ViewController ()
 
@@ -18,24 +18,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Demo";
+    self.view.backgroundColor = [UIColor whiteColor];
+
+    UIAlertController *alert = [FPCrashHandler debugOptionsAlert];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-}
-- (IBAction)crashButtonTouched:(id)sender
-{
-//    NSString* a = nil;
-//    NSArray* array = @[a];
-//    [[Crashlytics sharedInstance] crash];
-    abort();
-}
-
-- (IBAction)exitButtonTouched:(id)sender
-{
-    [[[UIApplication sharedApplication] delegate] applicationWillTerminate:[UIApplication sharedApplication]];
-    exit(0);
+    [super viewWillAppear:animated];
 }
 
 @end

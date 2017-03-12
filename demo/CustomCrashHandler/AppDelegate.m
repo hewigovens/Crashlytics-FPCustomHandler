@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import <Crashlytics/Crashlytics.h>
-#import "Crashlytics+FPCustomHandler.h"
+#import "FPCrashHandler.h"
+#import "ViewController.h"
 
 @interface AppDelegate()<CrashlyticsDelegate>
 @end
@@ -27,10 +28,13 @@ static void CustomSignalCrashHandler(int signo, siginfo_t *info, void *context)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    [self.window makeKeyAndVisible];
     
     [Crashlytics startWithAPIKey:@"" delegate:self];
-    [[Crashlytics sharedInstance] setupCustomExceptionHandler:&CustomNSExceptionCrashHandler];
-    [[Crashlytics sharedInstance] setupCustomSignalHandler:&CustomSignalCrashHandler];
+    [FPCrashHandler setupCustomExceptionHandler:&CustomNSExceptionCrashHandler];
+    [FPCrashHandler setupCustomSignalHandler:&CustomSignalCrashHandler];
 
     return YES;
 }

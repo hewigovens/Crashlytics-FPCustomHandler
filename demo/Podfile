@@ -1,6 +1,6 @@
 def shared_pods
     pod 'Crashlytics'
-    pod 'Crashlytics-FPCustomHandler', :path => '../'
+    pod 'FPCrashHandler', :path => '../'
 end
 
 target 'CustomCrashHandler' do

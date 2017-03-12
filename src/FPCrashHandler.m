@@ -6,9 +6,12 @@
 //  Copyright (c) 2014 fourplex. All rights reserved.
 //
 
-#import "Crashlytics+FPCustomHandler.h"
+#import "FPCrashHandler.h"
 #import <sys/signal.h>
-#import <Crashlytics/CLSReport.h>
+#import <sys/syslog.h>
+#import <stdlib.h>
+
+#define CLS_LOG(__FORMAT__, ...) syslog((LOG_WARNING, "%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
 #pragma mark - NSUncaughtExceptionHandler
 
@@ -58,18 +61,18 @@ static void fp_signal_handler(int signo, siginfo_t *info, void *context)
     }
 }
 
-#pragma mark - Crashlytics (FPCustomHandler)
+#pragma mark - FPCrashHandler
 
-@implementation Crashlytics (FPCustomHandler)
+@implementation FPCrashHandler
 
--(void)setupCustomExceptionHandler:(NSUncaughtExceptionHandler *)exceptionHandler
++(void)setupCustomExceptionHandler:(NSUncaughtExceptionHandler *)exceptionHandler
 {
     crashlyticsExceptionHandler = NSGetUncaughtExceptionHandler();
     customExceptionHandler = exceptionHandler;
     NSSetUncaughtExceptionHandler(&fpCustomExceptionHandler);
 }
 
--(void)setupCustomSignalHandler:(FPCustomSignalHandler)customHandler
++(void)setupCustomSignalHandler:(FPCustomSignalHandler)customHandler
 {
     custom_signal_handler = customHandler;
     
@@ -95,7 +98,30 @@ static void fp_signal_handler(int signo, siginfo_t *info, void *context)
     }
 }
 
--(void)_iterateSignals
++(UIAlertController *)debugOptionsAlert
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Debug options for testing FPCrashHandler" preferredStyle:UIAlertControllerStyleAlert];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"Simulate ObjcC Exception" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        NSString* a = nil;
+        NSArray* array = @[a];
+#pragma unused (array)
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"Call abort()" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        abort();
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"Call exit()" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [[[UIApplication sharedApplication] delegate] applicationWillTerminate:[UIApplication sharedApplication]];
+        exit(0);
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    return alert;
+}
+
++(void)_iterateSignals
 {
     struct sigaction old_sa;
     
@@ -110,7 +136,7 @@ static void fp_signal_handler(int signo, siginfo_t *info, void *context)
                 if (handler != old_sa.sa_sigaction) {
                     /* different signal handler detected abort...*/
                     CLS_LOG("==> different signal handler detected. This category may not work any more");
-                    abort();
+//                    abort();
                 }
             }
             CLS_LOG("==> signal :%d sigaction flags is : %d, sigaction handler is :%p", fp_signals[i], old_sa.sa_flags, old_sa.sa_sigaction);

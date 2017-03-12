@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
-  s.name         = "Crashlytics-FPCustomHandler"
+  s.name         = "FPCrashHandler"
   s.version      = "0.1.0"
-  s.summary      = "A category for Crashlytics to make your life easier"
+  s.summary      = "A post-crash handler for Crashlytics to make your life easier"
 
   s.description  = <<-DESC
-  FPCustomHandler is a category for Crashlytics to allow you run custom NSUncaughtExceptionHandler or signal handler when crash happened.
+  FPCrashHandler is a helper class for Crashlytics to allow you run custom NSUncaughtExceptionHandler or signal handler when crash happened.
                    DESC
 
   s.homepage     = "https://github.com/hewigovens/Crashlytics-FPCustomHandler"
@@ -25,6 +25,4 @@ Pod::Spec.new do |s|
   s.ios.deployment_target  = '6.0'
   s.osx.deployment_target  = '10.7'
   s.tvos.deployment_target = '9.0'
-
-  s.dependency 'Crashlytics'
 end
