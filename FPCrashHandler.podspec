@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FPCrashHandler"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "A post-crash handler for Crashlytics to make your life easier"
 
   s.description  = <<-DESC
