@@ -11,7 +11,7 @@
 #import <sys/syslog.h>
 #import <stdlib.h>
 
-#define CLS_LOG(__FORMAT__, ...) syslog((LOG_WARNING, "%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define FPLog(__FORMAT__, ...) syslog(LOG_WARNING, ("%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
 #pragma mark - NSUncaughtExceptionHandler
 
@@ -20,13 +20,13 @@ static NSUncaughtExceptionHandler* crashlyticsExceptionHandler = NULL;
 
 static void fpCustomExceptionHandler(NSException* exception)
 {
-    CLS_LOG("==> handle exception:%@", exception.name);
+    FPLog("==> handle exception:%s", [exception.name UTF8String]);
     if (customExceptionHandler) {
-        CLS_LOG("==> call custom exception handler");
+        FPLog("==> call custom exception handler");
         customExceptionHandler(exception);
     }
     if (crashlyticsExceptionHandler) {
-        CLS_LOG("==> call crashlytics exception handler");
+        FPLog("==> call crashlytics exception handler");
         crashlyticsExceptionHandler(exception);
     }
 }
@@ -50,13 +50,13 @@ static FPCustomSignalHandler crashlytics_signal_handler = NULL;
 
 static void fp_signal_handler(int signo, siginfo_t *info, void *context)
 {
-    CLS_LOG("==> handle signal:%d", signo);
+    FPLog("==> handle signal:%d", signo);
     if (custom_signal_handler) {
-        CLS_LOG("==> call custom signal handler");
+        FPLog("==> call custom signal handler");
         custom_signal_handler(signo, info, context);
     }
     if (crashlytics_signal_handler) {
-        CLS_LOG("==> call crashlytics signal handler");
+        FPLog("==> call crashlytics signal handler");
         crashlytics_signal_handler(signo, info, context);
     }
 }
@@ -93,11 +93,12 @@ static void fp_signal_handler(int signo, siginfo_t *info, void *context)
     int count = sizeof(fp_signals)/sizeof(int);
     for (int i = 0 ; i < count; i++) {
         if (sigaction(fp_signals[i], &sa, NULL) != 0) {
-            CLS_LOG("==> fail to register custom signal handler");
+            FPLog("==> fail to register custom signal handler");
         }
     }
 }
 
+#if TARGET_OS_IPHONE
 +(UIAlertController *)debugOptionsAlert
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Debug options for testing FPCrashHandler" preferredStyle:UIAlertControllerStyleAlert];
@@ -120,6 +121,7 @@ static void fp_signal_handler(int signo, siginfo_t *info, void *context)
     [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
     return alert;
 }
+#endif
 
 +(void)_iterateSignals
 {
@@ -135,11 +137,11 @@ static void fp_signal_handler(int signo, siginfo_t *info, void *context)
             } else {
                 if (handler != old_sa.sa_sigaction) {
                     /* different signal handler detected abort...*/
-                    CLS_LOG("==> different signal handler detected. This category may not work any more");
-//                    abort();
+                    FPLog("==> different signal handler detected. This category may not work any more");
+                    abort();
                 }
             }
-            CLS_LOG("==> signal :%d sigaction flags is : %d, sigaction handler is :%p", fp_signals[i], old_sa.sa_flags, old_sa.sa_sigaction);
+            FPLog("==> signal :%d sigaction flags is : %d, sigaction handler is :%p", fp_signals[i], old_sa.sa_flags, old_sa.sa_sigaction);
         }
     }
 }

@@ -24,9 +24,12 @@ typedef void (*FPCustomSignalHandler)(int signo, siginfo_t * _Nullable info, voi
  */
 +(void)setupCustomSignalHandler:(nonnull FPCustomSignalHandler)customHandler;
 
+
+#if TARGET_OS_IPHONE
 /**
  *  Return a debug options alert controller
  */
 +(nonnull UIAlertController *)debugOptionsAlert;
+#endif
 
 @end
